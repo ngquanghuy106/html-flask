@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Flask</title>
+</head>
+<body>
+
+    <h1>Frontend</h1>
+
+    <button onclick="callAPI()">Call Backend</button>
+
+    <p id="output"></p>
+
+    <script>
+        async function callAPI() {
+            const res = await fetch("/api/hello");
+            const data = await res.json();
+
+            document.getElementById("output").innerText =
+                data.message;
+        }
+    </script>
+
+</body>
+</html>
